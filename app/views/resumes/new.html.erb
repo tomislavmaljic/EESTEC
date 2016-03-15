@@ -11,12 +11,14 @@
     <div class="box-header with-border">
        <h3 class="box-title">Unos novog životopisa</h3>
      </div>
-      <form class="form-horizontal">
+
         <div class="box-body">
              <div class="form-group">
+
                 <%= form_for @resume do |f| %>
-                  <%= f.label "Ime" %>
+                  <%= f.label "Ime", class: "col-sm-2 control-label" %>
                   <%= f.text_field :name %>
+
             </div>
             <div class="form-group">
                   <%= f.label "Prezime", class: "col-sm-2 control-label" %>
@@ -44,15 +46,19 @@
             </div>
             <div class="form-group">
                   <%= f.label "Član EESTEC-a", class: "col-sm-2 control-label" %>
-                  <%= f.select :member, options_for_select([ "DA", "NE", "ALUMNI"]),{prompt: "Odaberi..."}, {class: "form-control"}, class: "col-sm-2 control-label" %>
+                  <%= f.select :member, options_for_select([ "DA", "NE", "ALUMNI"]),{prompt: "Odaberi..."}, class: "col-sm-2 control-label" %>
             </div>
             <div class="form-group">
                   <%= f.label :attachment , class: "col-sm-2 control-label"%>
                   <%= f.file_field :attachment %>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-2 control-label">
                   <%= f.submit "Save", class: "btn btn-danger" %>
                 <% end %>
-
+              </div>
+            </div>
           </div>
         </div>
-      </form>
+
     </div>
