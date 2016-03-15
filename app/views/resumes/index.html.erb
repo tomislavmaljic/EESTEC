@@ -1,0 +1,46 @@
+<% if !flash[:notice].blank? %>
+  <div class="alert alert-info">
+  <%= flash[:notice] %>
+  </div>
+<% end %>
+<br />
+<%= link_to "Dodaj životopis", new_resume_path, class: "btn btn-danger" %>
+<br />
+<br />
+
+<%= form_tag(resumes_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Pretraži bazu" %>
+  <%= submit_tag "Pretraži" %>
+<% end %>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Ime</th>
+      <th>Prezime</th>
+      <th>Fakultet</th>
+      <th>Godina studija</th>
+      <th>Smjer</th>
+      <th>E-mail</th>
+      <th>Vještine</th>
+      <th>Član EESTEC-a</th>
+      <th>Životopis</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @resumes.each do |resume| %>
+      <tr>
+        <td><%= resume.name %></td>
+        <td><%= resume.surname %></td>
+        <td><%= resume.college %></td>
+        <td><%= resume.year %></td>
+        <td><%= resume.course %></td>
+        <td><%= resume.email %></td>
+        <td><%= resume.keywords.gsub(";"," ") %></td>
+        <td><%= resume.member %></td>
+        <td><%= link_to "Preuzmi", resume.attachment_url %></td>
+        <td><%= button_to "Izbriši", resume, :method => :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
