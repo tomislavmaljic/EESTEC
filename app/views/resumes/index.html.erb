@@ -1,18 +1,40 @@
-<% if !flash[:notice].blank? %>
-  <div class="alert alert-info">
-  <%= flash[:notice] %>
-  </div>
-<% end %>
-<br />
+
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      Baza životopisa
+      <small>Popis članova</small>
+    </h1>
+  </section>
+<br/>
+<!--
+<div class="pull-left">
 <%= link_to "Dodaj životopis", new_resume_path, class: "btn btn-danger" %>
-<br />
-<br />
+</div>
 
-<%= form_tag(resumes_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Pretraži bazu" %>
-  <%= submit_tag "Pretraži" %>
-<% end %>
+<div class="pull-right">
+  <div class="row">
+      <div class="input-group">
+        <%= form_tag(resumes_path, :method => "get", id: "search-form") do %>
+          <%= text_field_tag :search, params[:search], placeholder: "Pretraži bazu", class: 'form-control' %>
+          <span class="input-group-btn">
+            <%= submit_tag "Pretraži", class: 'btn btn-danger' %>
+          </span>
+        <% end %>
+      </div>
+  </div>
+</div>
+-->
+<div class="info-box">
+  <!-- Apply any bg-* class to to the icon to color it -->
+  <span class="info-box-icon bg-red"><i class="fa fa-files-o"></i></span>
+  <div class="info-box-content">
+    <span class="info-box-text"> Broj životopisa</span>
+    <span class="info-box-number"> 93,139</span>
+  </div><!-- /.info-box-content -->
+</div><!-- /.info-box -->
 
+<br/>
 <table class="table table-striped">
   <thead>
     <tr>
