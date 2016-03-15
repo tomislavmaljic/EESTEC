@@ -7,35 +7,52 @@
     </ul>
   </div>
 <% end %>
+<div class="box box-danger">
+    <div class="box-header with-border">
+       <h3 class="box-title">Unos novog životopisa</h3>
+     </div>
+      <form class="form-horizontal">
+        <div class="box-body">
+             <div class="form-group">
+                <%= form_for @resume do |f| %>
+                  <%= f.label "Ime" %>
+                  <%= f.text_field :name %>
+            </div>
+            <div class="form-group">
+                  <%= f.label "Prezime", class: "col-sm-2 control-label" %>
+                  <%= f.text_field :surname %>
+            </div>
+            <div class="form-group">
+                  <%= f.label "Fakultet", class: "col-sm-2 control-label" %>
+                  <%= f.text_field :college %>
+            </div>
+            <div class="form-group">
+                  <%= f.label "Godina studija", class: "col-sm-2 control-label" %>
+                  <%= f.text_field :year %>
+            </div>
+            <div class="form-group">
+                  <%= f.label "Studij", class: "col-sm-2 control-label" %>
+                  <%= f.text_field :course %>
+            </div>
+            <div class="form-group">
+                  <%= f.label "E-mail", class: "col-sm-2 control-label"%>
+                  <%= f.text_field :email %>
+            </div>
+            <div class="form-group">
+                  <%= f.label "Keywords, jedna riječ, odvajaj s ';'", class: "col-sm-2 control-label" %>
+                  <%= f.text_field :keywords %>
+            </div>
+            <div class="form-group">
+                  <%= f.label "Član EESTEC-a", class: "col-sm-2 control-label" %>
+                  <%= f.select :member, options_for_select([ "DA", "NE", "ALUMNI"]),{prompt: "Odaberi..."}, {class: "form-control"}, class: "col-sm-2 control-label" %>
+            </div>
+            <div class="form-group">
+                  <%= f.label :attachment , class: "col-sm-2 control-label"%>
+                  <%= f.file_field :attachment %>
+                  <%= f.submit "Save", class: "btn btn-danger" %>
+                <% end %>
 
-<div class="well">
-  <%= form_for @resume do |f| %>
-    <%= f.label "Ime" %>
-    <%= f.text_field :name %>
-
-    <%= f.label "Prezime" %>
-    <%= f.text_field :surname %>
-
-    <%= f.label "Fakultet" %>
-    <%= f.text_field :college %>
-
-    <%= f.label "Godina studija" %>
-    <%= f.text_field :year %>
-
-    <%= f.label "Studij" %>
-    <%= f.text_field :course %>
-
-    <%= f.label "E-mail" %>
-    <%= f.text_field :email %>
-
-    <%= f.label "Keywords, jedna riječ, odvajaj s ';'" %>
-    <%= f.text_field :keywords %>
-
-    <%= f.label "Član EESTEC-a" %>
-    <%= f.select :member, options_for_select([ "DA", "NE", "ALUMNI"]),{prompt: "Odaberi..."}, {class: "form-control"} %>
-
-    <%= f.label :attachment %>
-    <%= f.file_field :attachment %>
-    <%= f.submit "Save", class: "btn btn-danger" %>
-  <% end %>
-</div>
+          </div>
+        </div>
+      </form>
+    </div>
