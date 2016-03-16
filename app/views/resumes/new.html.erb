@@ -46,19 +46,15 @@
             </div>
             <div class="form-group">
                   <%= f.label "Član EESTEC-a", class: "col-sm-2 control-label" %>
-                  <%= f.select :member, options_for_select([ "DA", "NE", "ALUMNI"]),{prompt: "Odaberi..."}, class: "col-sm-2 control-label" %>
+                  <%= f.select :member, options_for_select([ "DA", "NE", "ALUMNI"]),{prompt: "Odaberi..."} %>
             </div>
             <div class="form-group">
-                  <%= f.label :attachment , class: "col-sm-2 control-label"%>
+                  <%= f.label :attachment %>
                   <%= f.file_field :attachment %>
             </div>
             <div class="form-group">
-              <div class="col-sm-2 control-label">
                   <%= f.submit "Save", class: "btn btn-danger" %>
                 <% end %>
-              </div>
             </div>
           </div>
         </div>
-
-    </div>

@@ -3,7 +3,7 @@
   <section class="content-header">
     <h1>
       Baza životopisa
-      <small>Popis članova</small>
+      <small>Popis životopisa</small>
     </h1>
   </section>
 <br/>
@@ -30,39 +30,46 @@
   <span class="info-box-icon bg-red"><i class="fa fa-files-o"></i></span>
   <div class="info-box-content">
     <span class="info-box-text"> Broj životopisa</span>
-    <span class="info-box-number"> 0</span>
+    <span class="info-box-number"><%= @resumes.count  %></span>
   </div><!-- /.info-box-content -->
 </div><!-- /.info-box -->
 
 <br/>
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>Ime</th>
-      <th>Prezime</th>
-      <th>Fakultet</th>
-      <th>Godina studija</th>
-      <th>Smjer</th>
-      <th>E-mail</th>
-      <th>Vještine</th>
-      <th>Član EESTEC-a</th>
-      <th>Životopis</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @resumes.each do |resume| %>
-      <tr>
-        <td><%= resume.name %></td>
-        <td><%= resume.surname %></td>
-        <td><%= resume.college %></td>
-        <td><%= resume.year %></td>
-        <td><%= resume.course %></td>
-        <td><%= resume.email %></td>
-        <td><%= resume.keywords.gsub(";"," ") %></td>
-        <td><%= resume.member %></td>
-        <td><%= link_to "Preuzmi", resume.attachment_url %></td>
-        <td><%= button_to "Izbriši", resume, :method => :delete %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="box box-danger">
+    <div class="box-header with-border">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Fakultet</th>
+            <th>Godina studija</th>
+            <th>Smjer</th>
+            <th>E-mail</th>
+            <th>Vještine</th>
+            <th>Član EESTEC-a</th>
+            <th>Životopis</th>
+            <th>Izbriši</th>
+            <th>Izmjeni</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @resumes.each do |resume| %>
+            <tr>
+              <td><%= resume.name %></td>
+              <td><%= resume.surname %></td>
+              <td><%= resume.college %></td>
+              <td><%= resume.year %></td>
+              <td><%= resume.course %></td>
+              <td><%= resume.email %></td>
+              <td><%= resume.keywords.gsub(";"," ") %></td>
+              <td><%= resume.member %></td>
+              <td><a href="<%= resume.attachment_url %>"><i class="fa fa-cloud-download"></i></a></td>
+              <td> <%= link_to resume, method: :delete, data:{confirm: "Jeste li sigurni da želite obrisati životopis?"} do %><i class="fa fa-trash"></i><% end %>
+              <td><a href="<%= edit_resume_path(resume.id)%>"><i class="fa fa-pencil-square-o"></i></a></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+</div>
