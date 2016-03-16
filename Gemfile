@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem 'jquery-turbolinks'
 gem 'adminlte2-rails'
 gem 'carrierwave'
 gem 'bootstrap-sass'

@@ -65,7 +65,7 @@
               <td><%= resume.keywords.gsub(";"," ") %></td>
               <td><%= resume.member %></td>
               <td><a href="<%= resume.attachment_url %>"><i class="fa fa-cloud-download"></i></a></td>
-              <td> <%= link_to resume, method: :delete, data:{confirm: "Jeste li sigurni da želite obrisati životopis?"} do %><i class="fa fa-trash"></i><% end %>
+              <td> <%= link_to resume, method: :delete, data:{confirm: "Jeste li sigurni da želite obrisati životopis?"} do %><i class="fa fa-trash"></i><% end %></td>
               <td><a href="<%= edit_resume_path(resume.id)%>"><i class="fa fa-pencil-square-o"></i></a></td>
             </tr>
           <% end %>

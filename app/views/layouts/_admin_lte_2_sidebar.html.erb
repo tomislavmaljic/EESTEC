@@ -22,8 +22,8 @@
       <li class="treeview">
         <a href="#"><i class="fa fa-file-text"></i> <span>Životopisi</span> <i class="fa fa-angle-left pull-right"></i></a>
         <ul class="treeview-menu">
-          <li><a href="<%= resumes_path%>"><i class="fa fa-files-o"></i>Popis životopisa</a></li>
-          <li><a href="<%= new_resume_path%>"><i class="fa fa-pencil-square-o"></i>Dodaj životopis</a></li>
+          <li> <%= link_to resumes_path, 'data-no-turbolink' => true do %><i class="fa fa-files-o"></i>Popis životopisa<% end %></li>
+          <li> <%= link_to new_resume_path, 'data-no-turbolink' => true do %><i class="fa fa-pencil"></i>Dodaj životopis<% end %></li>
         </ul>
       </li>
     </ul><!-- /.sidebar-menu -->
