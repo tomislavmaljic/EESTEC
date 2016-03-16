@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>AdminLTE 2 | Log in</title>
+  <title>LC Zagreb | Log in</title>
   <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
 
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -18,10 +18,11 @@
 <body class="login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="/"><b>Admin</b>LTE</a>
+      <img src="/assets/logo_login.png"/>
   </div><!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Sign in to start your session</p>
+    <div class="login_center">
+    <p class="login-box-msg"><h3>Sign in</h3></p>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-group has-feedback">
         <%= f.text_field :email, class: 'form-control', autofocus: true %>
@@ -41,7 +42,7 @@
           </div>
         </div><!-- /.col -->
         <div class="col-xs-4">
-          <%= f.submit 'Log in', class: 'btn btn-primary btn-block btn-flat' %>
+          <%= f.submit 'Log in', class: 'btn btn-danger' %>
 
         </div><!-- /.col -->
       </div>

@@ -18,3 +18,20 @@
  *= require AdminLTE/skins/skin-red-light
  *= require_self
  */
+
+.login-page {
+  background-color: #F34541;
+}
+.login-box,
+.register-box {
+  width: 100%;
+  left: 50%;
+}
+
+.login_center {
+  padding-top: 2%;
+  padding-bottom: 3%;
+  width: 30%;
+  margin-left: 35%;
+  text-align: center;
+}
